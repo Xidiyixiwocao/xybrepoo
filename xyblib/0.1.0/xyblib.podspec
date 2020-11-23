@@ -25,12 +25,12 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '许远备' => 'c-xuyb@spdbdev.com' }
-  s.source           = { :git => 'https://github.com/Xidiyixiwocao/xyblibb.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://gitee.com/xuyuanbei/repo-test.git', :branch => 'master' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'xyblib/Classes/**/*'
+ # s.source_files = 'xyblib/Classes/**/*'
   
   # s.resource_bundles = {
   #   'xyblib' => ['xyblib/Assets/*.png']
@@ -39,4 +39,11 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.resource_bundles = {
+     'TencentVedioFHLocalizableBundle'=>['TencentVedio/Classes/FHLocalizable.bundle']
+   }
+   s.frameworks = 'MobileCoreServices', 'SystemConfiguration','AVFoundation','UIKit','CoreTelephony','AudioToolbox','VideoToolbox','CoreVideo','CoreAudio','ReplayKit','Callkit','CFNetwork','Foundation','QuartzCore','CoreGraphics'
+   s.libraries = 'iconv','resolv','z','bz2','sqlite3.0','c++'
+   s.vendored_frameworks = 'TencentVedio/Classes/ImSDK.framework','TencentVedio/Classes/FHBankSDK.framework'
+   s.pod_target_xcconfig = {'VALID_ARCHS'=>'arm64'} 
 end
